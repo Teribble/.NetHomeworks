@@ -84,7 +84,7 @@ namespace Terrible
         /// Показывает меню в консоле, выбор - Enter, навигация по стрелкам клавиатуры
         /// </summary>
         /// <returns>Возращает название кнопки</returns>
-        public string MakeAChoice()
+        public string Update()
         {
 
             ConsoleKeyInfo sKey;

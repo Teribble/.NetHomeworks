@@ -19,7 +19,7 @@ namespace Terrible
 
                 menu.AddButton(buttons);
 
-                choice = menu.MakeAChoice();
+                choice = menu.Update();
 
                 switch (choice)
                 {

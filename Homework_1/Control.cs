@@ -25,56 +25,47 @@ namespace Terrible
                 {
                     case "Integer_24":
                         Homework.Integer24();
-                        Console.WriteLine("Для продолжения нажмите Enter..");
-                        Console.ReadLine();
-                        Console.Clear();
+                        Continue();
                         break;
                     case "Integer_29":
                         Homework.Integer29();
-                        Console.WriteLine("Для продолжения нажмите Enter..");
-                        Console.ReadLine();
-                        Console.Clear();
+                        Continue();
                         break;
                     case "Boolean_25":
                         Homework.Boolean25();
-                        Console.WriteLine("Для продолжения нажмите Enter..");
-                        Console.ReadLine();
-                        Console.Clear();
+                        Continue(); 
                         break;
                     case "Boolean_30":
                         Homework.Boolean30();
-                        Console.WriteLine("Для продолжения нажмите Enter..");
-                        Console.ReadLine();
-                        Console.Clear();
+                        Continue();
                         break;
                     case "Boolean_35":
                         Homework.Boolean35();
-                        Console.WriteLine("Для продолжения нажмите Enter..");
-                        Console.ReadLine();
-                        Console.Clear();
+                        Continue();
                         break;
                     case "If_20":
                         Homework.If20();
-                        Console.WriteLine("Для продолжения нажмите Enter..");
-                        Console.ReadLine();
-                        Console.Clear();
+                        Continue();
                         break;
                     case "If_23":
                         Homework.If23();
-                        Console.WriteLine("Для продолжения нажмите Enter..");
-                        Console.ReadLine();
-                        Console.Clear();
+                        Continue();
                         break;
                     case "If_26":
                         Homework.If26();
-                        Console.WriteLine("Для продолжения нажмите Enter..");
-                        Console.ReadLine();
-                        Console.Clear();
+                        Continue();
                         break;
                 }
             }
 
             
+        }
+
+        private static void Continue()
+        {
+            Console.WriteLine("Для продолжения нажмите Enter..");
+            Console.ReadLine();
+            Console.Clear();
         }
     }
 }

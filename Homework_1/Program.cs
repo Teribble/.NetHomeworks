@@ -4,7 +4,6 @@
     {
         static void Main(string[] args)
         {
-            System.Console.WriteLine("");
             Control.Run();
         }
     }

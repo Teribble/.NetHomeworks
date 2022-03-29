@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 namespace Terrible
-{   
+{
     /// <summary>
     /// Кастомное меню
     /// </summary>
@@ -35,7 +35,7 @@ namespace Terrible
         /// Конструктор
         /// </summary>
         /// <param name="isVertical">true - вертикальная таблица, false - горизонтальная таблица</param>
-        public CustomMenu(bool isVertical) 
+        public CustomMenu(bool isVertical)
         {
             _buttons = new List<string>();
             _isVertical = isVertical;
@@ -50,7 +50,7 @@ namespace Terrible
         public void AddButton(string name)
         {
             _buttons.Add(name);
-            if(name.Length > _maxNameWidth)
+            if (name.Length > _maxNameWidth)
                 _maxNameWidth = name.Length;
         }
 
@@ -88,13 +88,12 @@ namespace Terrible
         {
 
             ConsoleKeyInfo sKey;
-            
 
             while (true)
             {
                 Console.CursorVisible = false;
 
-                Console.SetCursorPosition(0,0);
+                Console.SetCursorPosition(0, 0);
 
                 Show();
 
@@ -112,12 +111,12 @@ namespace Terrible
                             return _buttons[0].ToString();
                         case ConsoleKey.LeftArrow:
                             if (_selection == 0)
-                                _selection = _buttons.Count-1;
+                                _selection = _buttons.Count - 1;
                             else
                                 _selection--;
                             break;
                         case ConsoleKey.RightArrow:
-                            if (_selection == _buttons.Count-1)
+                            if (_selection == _buttons.Count - 1)
                                 _selection = 0;
                             else
                                 _selection++;
@@ -137,20 +136,20 @@ namespace Terrible
                     switch (sKey.Key)
                     {
                         case ConsoleKey.Enter:
-                            Console.SetCursorPosition(0,0);
+                            Console.SetCursorPosition(0, 0);
                             DeShow();
-                            Console.SetCursorPosition(0,0);
+                            Console.SetCursorPosition(0, 0);
                             return _buttons[_selection].ToString();
                         case ConsoleKey.Escape:
                             return _buttons[0].ToString();
                         case ConsoleKey.UpArrow:
                             if (_selection == 0)
-                                _selection = _buttons.Count-1;
+                                _selection = _buttons.Count - 1;
                             else
                                 _selection--;
                             break;
                         case ConsoleKey.DownArrow:
-                            if (_selection == _buttons.Count-1)
+                            if (_selection == _buttons.Count - 1)
                                 _selection = 0;
                             else
                                 _selection++;
@@ -170,14 +169,14 @@ namespace Terrible
         /// </summary>
         private void Show()
         {
-            if(false == _isVertical)
+            if (false == _isVertical)
             {
                 for (int i = 0; i < _buttons.Count; i++)
                 {
                     if (i == _selection)
                     {
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.Write(i +" > " +  _buttons[i].ToString().PadLeft(_maxNameWidth));
+                        Console.Write(i + " > " + _buttons[i].ToString().PadLeft(_maxNameWidth));
                         Console.ResetColor();
                     }
                     else
@@ -218,7 +217,7 @@ namespace Terrible
             {
                 for (int i = 0; i < _buttons.Count; i++)
                 {
-                    for (int j = 0; j < _maxNameWidth + i + " > ".Length+1; j++)
+                    for (int j = 0; j < _maxNameWidth + i + " > ".Length + 1; j++)
                     {
                         Console.Write(" ");
                     }
@@ -229,13 +228,13 @@ namespace Terrible
             {
                 for (int i = 0; i < _buttons.Count; i++)
                 {
-                    for (int j = 0; j < _maxNameWidth + i + " > ".Length+1; j++)
+                    for (int j = 0; j < _maxNameWidth + i + " > ".Length + 1; j++)
                     {
                         Console.Write(" ");
                     }
                     Console.WriteLine();
                 }
-                
+
             }
             Console.WriteLine();
             Console.Write("           ");

@@ -50,6 +50,7 @@ namespace Terrible
         public void AddButton(string name)
         {
             _buttons.Add(name);
+
             if(name.Length > _maxNameWidth)
                 _maxNameWidth = name.Length;
         }
@@ -62,6 +63,7 @@ namespace Terrible
         public void AddButton(int index, string name)
         {
             _buttons.Insert(index - 1, name);
+
             if (name.Length > _maxNameWidth)
                 _maxNameWidth = name.Length;
         }
@@ -75,6 +77,7 @@ namespace Terrible
             foreach (string name in names)
             {
                 _buttons.Add(name);
+
                 if (name.Length > _maxNameWidth)
                     _maxNameWidth = name.Length;
             }
@@ -100,69 +103,95 @@ namespace Terrible
 
                 if (false == _isVertical)
                 {
+
                     sKey = Console.ReadKey();
 
-                    switch (sKey.Key)
-                    {
-                        case ConsoleKey.Enter:
-                            DeShow();
-                            Console.SetCursorPosition(0, 0);
-                            return _buttons[_selection].ToString();
-                        case ConsoleKey.Escape:
-                            return _buttons[0].ToString();
-                        case ConsoleKey.LeftArrow:
-                            if (_selection == 0)
-                                _selection = _buttons.Count-1;
-                            else
-                                _selection--;
-                            break;
-                        case ConsoleKey.RightArrow:
-                            if (_selection == _buttons.Count-1)
-                                _selection = 0;
-                            else
-                                _selection++;
-                            break;
-                        case ConsoleKey.End:
-                            return "-1";
-
-                        default:
-                            break;
-                    }
+                    SelectionVertical(sKey);
+                    
                 }
                 else
                 {
 
                     sKey = Console.ReadKey();
 
-                    switch (sKey.Key)
-                    {
-                        case ConsoleKey.Enter:
-                            Console.SetCursorPosition(0,0);
-                            DeShow();
-                            Console.SetCursorPosition(0,0);
-                            return _buttons[_selection].ToString();
-                        case ConsoleKey.Escape:
-                            return _buttons[0].ToString();
-                        case ConsoleKey.UpArrow:
-                            if (_selection == 0)
-                                _selection = _buttons.Count-1;
-                            else
-                                _selection--;
-                            break;
-                        case ConsoleKey.DownArrow:
-                            if (_selection == _buttons.Count-1)
-                                _selection = 0;
-                            else
-                                _selection++;
-                            break;
-                        case ConsoleKey.End:
-                            return "-1";
+                    SelectionHorizontal(sKey);
 
-                        default:
-                            break;
-                    }
                 }
             }
+        }
+        /// <summary>
+        /// Функция выбора для горизонтальной таблицы
+        /// </summary>
+        /// <param name="sKey">Нажатая кнопка</param>
+        /// <returns>Возращает выбор юзера</returns>
+        private string SelectionHorizontal(ConsoleKeyInfo sKey)
+        {
+            switch (sKey.Key)
+            {
+                case ConsoleKey.Enter:
+                    Console.SetCursorPosition(0, 0);
+                    DeShow();
+                    Console.SetCursorPosition(0, 0);
+                    return _buttons[_selection].ToString();
+                case ConsoleKey.Escape:
+                    return _buttons[0].ToString();
+                case ConsoleKey.UpArrow:
+                    if (_selection == 0)
+                        _selection = _buttons.Count - 1;
+                    else
+                        _selection--;
+                    break;
+                case ConsoleKey.DownArrow:
+                    if (_selection == _buttons.Count - 1)
+                        _selection = 0;
+                    else
+                        _selection++;
+                    break;
+                case ConsoleKey.End:
+                    return "-1";
+
+                default:
+                    break;
+            }
+
+            return _buttons[0].ToString();
+        }
+
+        /// <summary>
+        /// Функция выбора для вертикальной таблицы
+        /// </summary>
+        /// <param name="key">Нажатая кнопка</param>
+        /// <returns>Возращает выбор юзера</returns>
+        private string SelectionVertical(ConsoleKeyInfo key)
+        {
+            switch (key.Key)
+            {
+                case ConsoleKey.Enter:
+                    DeShow();
+                    Console.SetCursorPosition(0, 0);
+                    return _buttons[_selection].ToString();
+                case ConsoleKey.Escape:
+                    return _buttons[0].ToString();
+                case ConsoleKey.LeftArrow:
+                    if (_selection == 0)
+                        _selection = _buttons.Count - 1;
+                    else
+                        _selection--;
+                    break;
+                case ConsoleKey.RightArrow:
+                    if (_selection == _buttons.Count - 1)
+                        _selection = 0;
+                    else
+                        _selection++;
+                    break;
+                case ConsoleKey.End:
+                    return "-1";
+
+                default:
+                    break;
+            }
+
+            return _buttons[0].ToString();
         }
 
         /// <summary>

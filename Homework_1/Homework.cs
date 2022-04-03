@@ -17,7 +17,12 @@ namespace Terrible
         public static void Integer24()
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("\t-Integer24-");
+            Console.WriteLine($"Задание первое\n" +
+                $"Дни недели пронумерованы следующим образом: 0 — воскресенье,\n" +
+                $"1 — понедельник, 2 — вторник, . . . , 6 — суббота.\nДано целое число K,\n" +
+                $"лежащее в диапазоне 1–365. Определить номер дня недели для K-го дня\n" +
+                $"года, если известно, что в этом году 1 января было понедельником\n\n" +
+                $"Ввод числа с проверкой на неправильный ввод\n");
             Console.ResetColor();
 
             Console.WriteLine("Введите номер дня в году:");
@@ -64,7 +69,10 @@ namespace Terrible
         public static void Integer29()
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("\t-Integer29-");
+            Console.WriteLine($"Даны целые положительные числа A, B, C. На прямоугольнике размера A × B \n" +
+                $"размещено максимально возможное количество квадратов со\n" +
+                $"стороной C(без наложений). Найти количество квадратов, размещенных\n" +
+                $"на прямоугольнике, а также площадь незанятой части прямоугольника.\n");
             Console.ResetColor();
 
             Console.WriteLine("Введите A");
@@ -94,7 +102,8 @@ namespace Terrible
         {
 
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("\t-Boolean25-");
+            Console.WriteLine($"Даны числа x, y. Проверить истинность высказывания: «Точка с\n" +
+                $"координатами(x, y) лежит во второй координатной четверти».\n");
             Console.ResetColor();
 
             Console.WriteLine("Введите число X");
@@ -124,7 +133,8 @@ namespace Terrible
         public static void Boolean30()
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("\t-Boolean30-");
+            Console.WriteLine($"Даны целые числа a, b, c, являющиеся сторонами некоторого треугольника. \n" +
+                $"Проверить истинность высказывания: «Треугольник со сторонами a, b, c является равносторонним».\n");
             Console.ResetColor();
 
             Console.WriteLine("Введите сторону треугольника А");
@@ -152,7 +162,9 @@ namespace Terrible
         {
 
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("\t-Boolean35-");
+            Console.WriteLine($"Даны координаты двух различных полей шахматной доски x1,\n" +
+                $"y1, x2, y2(целые числа, лежащие в диапазоне 1–8). \n" +
+                $"Проверить истинность высказывания: «Данные поля имеют одинаковый цвет».\n");
             Console.ResetColor();
 
             bool bX1 = false;
@@ -216,7 +228,9 @@ namespace Terrible
         public static void If20()
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("\t-If20-");
+            Console.WriteLine($"На числовой оси расположены три точки: A, B, C. Определить, какая из\n" +
+                $"двух последних точек(B или C) расположена ближе к A, и вывести эту\n" +
+                $"точку и ее расстояние от точки A.\n");
             Console.ResetColor();
 
             Console.WriteLine("Введите точку А");
@@ -251,7 +265,8 @@ namespace Terrible
         public static void If23()
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("\t-If23-");
+            Console.WriteLine($"Даны целочисленные координаты трех вершин прямоугольника, стороны\n" +
+                $"которого параллельны координатным осям.Найти координаты его четвертой вершины.\n");
             Console.ResetColor();
 
             Console.WriteLine("Введите точку x1");
@@ -298,7 +313,10 @@ namespace Terrible
         public static void If26()
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("\t-If26-");
+            Console.WriteLine($"Для данного вещественного x найти значение следующей функции f,принимающей вещественные значения:\n" +
+                $"        −x, если x ≤ 0,\n" +
+                $"f(x) =  x(квадрат), если 0 < x < 2,\n" +
+                $"        4, если x ≥ 2. \n");
             Console.ResetColor();
 
             Console.WriteLine("Введите точку x, дробную часть указать через запятую");

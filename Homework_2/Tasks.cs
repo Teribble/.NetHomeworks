@@ -245,5 +245,115 @@ namespace Terrible
             Console.WriteLine("Для продолжения нажмите ENTER");
             Console.ReadLine();
         }
+        /// <summary>
+        /// Дано целое число N (> 1), являющееся числом Фибоначчи: N = F^K
+        /// (определение чисел Фибоначчи дано в задании While24).
+        /// Найти целые числа F^K−1 и F^K+1 — предыдущее и последующее числа Фибоначчи.
+        /// </summary>
+        public static void While26()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"Дано целое число N (> 1), являющееся числом Фибоначчи: N = F^K\n" +
+                              $"(определение чисел Фибоначчи дано в задании While24).\n" +
+                              $"Найти целые числа F^K−1 и F^K+1 — предыдущее и последующее числа Фибоначчи.\n");
+            Console.ResetColor();
+
+            Console.WriteLine("Введите целое число: ");
+            int N = iHelper.Function.EnterTheNumber(1, int.MaxValue);
+
+            Console.WriteLine("Введите вещественное число N2");
+            float N2 = iHelper.Function.EnterTheNumber(1f, float.MaxValue);
+
+            float N1 = N2, result = N2;
+
+            for (int i = 2, k = 1; i <= N; i++)
+            {
+                k += 2;
+                N1 *= -1 * N2 * N2;
+                result += N1 / k;
+            }
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"Result: {result}");
+            Console.ResetColor();
+
+            Console.WriteLine("Для продолжения нажмите ENTER");
+            Console.ReadLine();
+        }
+        /// <summary>
+        ///  Дано вещественное число ε (> 0). Последовательность вещественных чисел A^K определяется следующим образом:
+        ///  A1 = 2,
+        ///  AK = 2 + 1/A^K−1,
+        ///  K = 2, 3, . . . .
+        ///  Найти первый из номеров K, для которых выполняется условие|A^K − A^K−1| < ε, и вывести этот номер, а также числа A^K−1 и AK.
+        /// </summary>
+        public static void While28()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"Дано вещественное число ε (> 0). Последовательность вещественных чисел A^K определяется следующим образом:\n" +
+                              $"A1 = 2,\nAK = 2 + 1/A^K−1,\nK = 2, 3, . . . .\n" +
+                              $"Найти первый из номеров K, для которых выполняется условие|A^K − A^K−1| < ε,\n" +
+                              $"и вывести этот номер, а также числа A^K−1 и AK.\n");
+            Console.ResetColor();
+
+            Console.WriteLine("Введите вещественное число ε");
+            float X = iHelper.Function.EnterTheNumber(1, float.MaxValue);
+
+            Console.WriteLine("Введите целое число N: ");
+            int N = iHelper.Function.EnterTheNumber(1, int.MaxValue);
+
+            float temp1 = 1, temp2 = 1, result = 1, pow = 1;
+
+            for (int i = 1; i < N; i++)
+            {
+                temp1 *= 2 * i - 3;
+                temp2 *= 2 * i;
+                pow *= (-1) * X;
+                result += temp1 * pow / temp2;
+            }
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"Result: {result}");
+            Console.ResetColor();
+
+            Console.ReadLine()
+;        }
+        /// <summary>
+        /// Дано целое число N (> 1) и набор из N чисел. Найти номера
+        /// двух соседних чисел из данного набора, произведение которых является
+        /// минимальным, и вывести вначале меньший, а затем больший номер
+        /// </summary>
+        public static void Minmax25()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"Дано целое число N (> 1) и набор из N чисел. \n" +
+                              $"Найти номера двух соседних чисел из данного набора, произведение которых является\n" +
+                              $"минимальным, и вывести вначале меньший, а затем больший номер\n");
+            Console.ResetColor();
+
+            int N, i, imul = 0;
+            float r1 = 0, r2 = 0, minmul = 0;
+
+            Console.WriteLine("Введите целое число N: ");
+            N = iHelper.Function.EnterTheNumber(1, int.MaxValue);
+
+            for (i = 1; i <= N; ++i)
+            {
+                r2 = r1;
+                Console.WriteLine($"i > {i}");
+                r1 = iHelper.Function.EnterTheNumber(0f, float.MaxValue);
+
+                if ((i == 2) || (r1 * r2 < minmul))
+                {
+                    minmul = r2 * r1;
+                    imul = i;
+                }
+            }
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"Min1: {imul - 1}\nMin2: {imul}");
+            Console.ResetColor();
+
+            Console.ReadLine();
+        }
     }
 }

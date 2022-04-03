@@ -86,6 +86,7 @@ namespace Terrible
         /// <returns>Возращает название кнопки</returns>
         public string Update()
         {
+            Console.Clear();
 
             ConsoleKeyInfo sKey;
 

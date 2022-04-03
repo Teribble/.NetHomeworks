@@ -11,16 +11,10 @@ namespace Homework_2
     {
         static void Main(string[] args)
         {
-            CustomMenu menu = new CustomMenu(true);
-
-            menu.AddButton("Null");
-            menu.AddButton("One");
-            menu.AddButton("Two");
-            menu.AddButton("Three");
-
-            menu.Update();
-            
-            Console.ReadLine();
+            //Terrible.Tasks.Case10();
+            //Terrible.Tasks.Case15();
+            //Terrible.Tasks.For17();
+            Terrible.Tasks.For38();
         }
     }
 }

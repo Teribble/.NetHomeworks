@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace itsTime
 {
@@ -7,6 +8,7 @@ namespace itsTime
         static void Main(string[] args)
         {
             Console.Title = "Timer";
+
             Console.SetWindowSize(22, 8);
             Console.SetBufferSize(22, 8);
 

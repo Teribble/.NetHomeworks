@@ -6,11 +6,4 @@
     <PackageIcon>128 (1).png</PackageIcon>
   </PropertyGroup>
 
-  <ItemGroup>
-    <None Include="..\..\..\..\Users\Uldumium\Desktop\128 (1).png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
-
 </Project>

@@ -1,4 +1,6 @@
-﻿namespace Terrible
+﻿using System;
+
+namespace Terrible
 {
     public class Program
     {

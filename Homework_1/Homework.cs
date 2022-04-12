@@ -1,5 +1,5 @@
 ﻿using System;
-using iHelper;
+using MyLib;
 
 namespace Terrible
 {
@@ -16,6 +16,7 @@ namespace Terrible
         /// </summary>
         public static void Integer24()
         {
+            Console.Clear();
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"Задание первое\n" +
                 $"Дни недели пронумерованы следующим образом: 0 — воскресенье,\n" +
@@ -23,41 +24,16 @@ namespace Terrible
                 $"лежащее в диапазоне 1–365. Определить номер дня недели для K-го дня\n" +
                 $"года, если известно, что в этом году 1 января было понедельником\n\n" +
                 $"Ввод числа с проверкой на неправильный ввод\n");
+
             Console.ResetColor();
 
             Console.WriteLine("Введите номер дня в году:");
 
-            int value = Function.EnterTheNumber(1, 365);
+            int value = MyFunction.EnterTheNumber(1, 365);
 
             value %= 7;
 
-
-
-            switch (value)
-            {
-                case 0:
-                    Console.WriteLine(DayOfTheWeek.Воскресенье);
-                    break;
-                case 1:
-                    Console.WriteLine(DayOfTheWeek.Понедельник);
-                    break;
-                case 2:
-                    Console.WriteLine(DayOfTheWeek.Вторник);
-                    break;
-                case 3:
-                    Console.WriteLine(DayOfTheWeek.Среда);
-                    break;
-                case 4:
-                    Console.WriteLine(DayOfTheWeek.Четверг);
-                    break;
-                case 5:
-                    Console.WriteLine(DayOfTheWeek.Пятница);
-                    break;
-                case 6:
-                    Console.WriteLine(DayOfTheWeek.Суббота);
-                    break;
-            }
-            Console.WriteLine();
+            Console.WriteLine((DayOfWeek)value);
         }
 
         /// <summary>
@@ -68,6 +44,7 @@ namespace Terrible
         /// </summary>
         public static void Integer29()
         {
+            Console.Clear();
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"Даны целые положительные числа A, B, C. На прямоугольнике размера A × B \n" +
                 $"размещено максимально возможное количество квадратов со\n" +
@@ -76,13 +53,13 @@ namespace Terrible
             Console.ResetColor();
 
             Console.WriteLine("Введите A");
-            int a = Function.EnterTheNumber(0, int.MaxValue);
+            int a = MyFunction.EnterTheNumber(0, int.MaxValue);
 
             Console.WriteLine("Введите B");
-            int b = Function.EnterTheNumber(0, int.MaxValue);
+            int b = MyFunction.EnterTheNumber(0, int.MaxValue);
 
             Console.WriteLine("Введите C");
-            int c = Function.EnterTheNumber(0, int.MaxValue);
+            int c = MyFunction.EnterTheNumber(0, int.MaxValue);
 
             int S1 = a * b;
             int S2 = c * c;
@@ -100,17 +77,17 @@ namespace Terrible
         /// </summary>
         public static void Boolean25()
         {
-
+            Console.Clear();
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"Даны числа x, y. Проверить истинность высказывания: «Точка с\n" +
                 $"координатами(x, y) лежит во второй координатной четверти».\n");
             Console.ResetColor();
 
             Console.WriteLine("Введите число X");
-            int x = Function.EnterTheNumber(int.MinValue, int.MaxValue);
+            int x = MyFunction.EnterTheNumber(int.MinValue, int.MaxValue);
 
             Console.WriteLine("Введите число Y");
-            int y = Function.EnterTheNumber(int.MinValue, int.MaxValue);
+            int y = MyFunction.EnterTheNumber(int.MinValue, int.MaxValue);
 
             if (x < 0 && y > 0)
             {
@@ -132,19 +109,20 @@ namespace Terrible
         /// </summary>
         public static void Boolean30()
         {
+            Console.Clear();
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"Даны целые числа a, b, c, являющиеся сторонами некоторого треугольника. \n" +
                 $"Проверить истинность высказывания: «Треугольник со сторонами a, b, c является равносторонним».\n");
             Console.ResetColor();
 
             Console.WriteLine("Введите сторону треугольника А");
-            int a = Function.EnterTheNumber(0, int.MaxValue);
+            int a = MyFunction.EnterTheNumber(0, int.MaxValue);
 
             Console.WriteLine("Введите сторону треугольника В");
-            int b = Function.EnterTheNumber(0, int.MaxValue);
+            int b = MyFunction.EnterTheNumber(0, int.MaxValue);
 
             Console.WriteLine("Введите сторону треугольника C");
-            int c = Function.EnterTheNumber(0, int.MaxValue);
+            int c = MyFunction.EnterTheNumber(0, int.MaxValue);
 
             if (a == b && b == c)
                 Console.WriteLine("Истина");
@@ -160,7 +138,7 @@ namespace Terrible
         /// </summary>
         public static void Boolean35()
         {
-
+            Console.Clear();
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"Даны координаты двух различных полей шахматной доски x1,\n" +
                 $"y1, x2, y2(целые числа, лежащие в диапазоне 1–8). \n" +
@@ -171,10 +149,10 @@ namespace Terrible
             bool bX2 = false;
 
             Console.WriteLine("Введите координату первого поля х1");
-            int x1 = Function.EnterTheNumber(1, 8);
+            int x1 = MyFunction.EnterTheNumber(1, 8);
 
             Console.WriteLine("Введите координату первого поля y1");
-            int y1 = Function.EnterTheNumber(1, 8);
+            int y1 = MyFunction.EnterTheNumber(1, 8);
 
             if (x1 % 2 == 0 && y1 % 2 == 0)
             {
@@ -193,10 +171,10 @@ namespace Terrible
             }
 
             Console.WriteLine("Введите координату первого поля х2");
-            int x2 = Function.EnterTheNumber(1, 8);
+            int x2 = MyFunction.EnterTheNumber(1, 8);
 
             Console.WriteLine("Введите координату первого поля y2");
-            int y2 = Function.EnterTheNumber(1, 8);
+            int y2 = MyFunction.EnterTheNumber(1, 8);
 
             if (x2 % 2 == 0 && y2 % 2 == 0)
             {
@@ -227,6 +205,7 @@ namespace Terrible
         /// </summary>
         public static void If20()
         {
+            Console.Clear();
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"На числовой оси расположены три точки: A, B, C. Определить, какая из\n" +
                 $"двух последних точек(B или C) расположена ближе к A, и вывести эту\n" +
@@ -234,13 +213,13 @@ namespace Terrible
             Console.ResetColor();
 
             Console.WriteLine("Введите точку А");
-            int A = Function.EnterTheNumber(int.MinValue, int.MaxValue);
+            int A = MyFunction.EnterTheNumber(int.MinValue, int.MaxValue);
 
             Console.WriteLine("Введите точку B");
-            int B = Function.EnterTheNumber(int.MinValue, int.MaxValue);
+            int B = MyFunction.EnterTheNumber(int.MinValue, int.MaxValue);
 
             Console.WriteLine("Введите точку C");
-            int C = Function.EnterTheNumber(int.MinValue, int.MaxValue);
+            int C = MyFunction.EnterTheNumber(int.MinValue, int.MaxValue);
 
             if (Math.Abs(A - B) < Math.Abs(A - C))
             {
@@ -264,28 +243,29 @@ namespace Terrible
         /// </summary>
         public static void If23()
         {
+            Console.Clear();
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"Даны целочисленные координаты трех вершин прямоугольника, стороны\n" +
                 $"которого параллельны координатным осям.Найти координаты его четвертой вершины.\n");
             Console.ResetColor();
 
             Console.WriteLine("Введите точку x1");
-            int x1 = Function.EnterTheNumber(int.MinValue, int.MaxValue);
+            int x1 = MyFunction.EnterTheNumber(int.MinValue, int.MaxValue);
 
             Console.WriteLine("Введите точку y1");
-            int y1 = Function.EnterTheNumber(int.MinValue, int.MaxValue);
+            int y1 = MyFunction.EnterTheNumber(int.MinValue, int.MaxValue);
 
             Console.WriteLine("Введите точку x2");
-            int x2 = Function.EnterTheNumber(int.MinValue, int.MaxValue);
+            int x2 = MyFunction.EnterTheNumber(int.MinValue, int.MaxValue);
 
             Console.WriteLine("Введите точку y2");
-            int y2 = Function.EnterTheNumber(int.MinValue, int.MaxValue);
+            int y2 = MyFunction.EnterTheNumber(int.MinValue, int.MaxValue);
 
             Console.WriteLine("Введите точку x3");
-            int x3 = Function.EnterTheNumber(int.MinValue, int.MaxValue);
+            int x3 = MyFunction.EnterTheNumber(int.MinValue, int.MaxValue);
 
             Console.WriteLine("Введите точку y3");
-            int y3 = Function.EnterTheNumber(int.MinValue, int.MaxValue);
+            int y3 = MyFunction.EnterTheNumber(int.MinValue, int.MaxValue);
 
             if (x2 == x3)
                 Console.WriteLine($"Четвертая точка по х = {x1}");
@@ -312,6 +292,7 @@ namespace Terrible
         /// </summary>
         public static void If26()
         {
+            Console.Clear();
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"Для данного вещественного x найти значение следующей функции f,принимающей вещественные значения:\n" +
                 $"        −x, если x ≤ 0,\n" +
@@ -320,7 +301,7 @@ namespace Terrible
             Console.ResetColor();
 
             Console.WriteLine("Введите точку x, дробную часть указать через запятую");
-            float x = Function.EnterTheNumber(float.MinValue, float.MaxValue);
+            float x = MyFunction.EnterTheNumber(float.MinValue, float.MaxValue);
 
             if (x <= 0)
                 Console.WriteLine($"F(x) = {x * -1}");

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Terrible
+namespace MyLib
 {
     /// <summary>
     /// Кастомное меню
@@ -97,70 +97,37 @@ namespace Terrible
 
                 Show();
 
-                if (false == _isVertical)
+                sKey = Console.ReadKey();
+
+                switch (sKey.Key)
                 {
-                    sKey = Console.ReadKey();
+                    case ConsoleKey.Enter:
+                        DeShow();
+                        Console.SetCursorPosition(0, 0);
+                        return _buttons[_selection].ToString();
+                    case ConsoleKey.Escape:
+                        return "-1";
+                    case ConsoleKey.LeftArrow:
+                    case ConsoleKey.UpArrow:
+                        if (_selection == 0)
+                            _selection = _buttons.Count - 1;
+                        else
+                            _selection--;
+                        break;
+                    case ConsoleKey.RightArrow:
+                    case ConsoleKey.DownArrow:
+                        if (_selection == _buttons.Count - 1)
+                            _selection = 0;
+                        else
+                            _selection++;
+                        break;
+                    case ConsoleKey.End:
+                        return "-1";
 
-                    switch (sKey.Key)
-                    {
-                        case ConsoleKey.Enter:
-                            DeShow();
-                            Console.SetCursorPosition(0, 0);
-                            return _buttons[_selection].ToString();
-                        case ConsoleKey.Escape:
-                            return _buttons[0].ToString();
-                        case ConsoleKey.LeftArrow:
-                            if (_selection == 0)
-                                _selection = _buttons.Count - 1;
-                            else
-                                _selection--;
-                            break;
-                        case ConsoleKey.RightArrow:
-                            if (_selection == _buttons.Count - 1)
-                                _selection = 0;
-                            else
-                                _selection++;
-                            break;
-                        case ConsoleKey.End:
-                            return "-1";
-
-                        default:
-                            break;
-                    }
+                    default:
+                        break;
                 }
-                else
-                {
 
-                    sKey = Console.ReadKey();
-
-                    switch (sKey.Key)
-                    {
-                        case ConsoleKey.Enter:
-                            Console.SetCursorPosition(0, 0);
-                            DeShow();
-                            Console.SetCursorPosition(0, 0);
-                            return _buttons[_selection].ToString();
-                        case ConsoleKey.Escape:
-                            return _buttons[0].ToString();
-                        case ConsoleKey.UpArrow:
-                            if (_selection == 0)
-                                _selection = _buttons.Count - 1;
-                            else
-                                _selection--;
-                            break;
-                        case ConsoleKey.DownArrow:
-                            if (_selection == _buttons.Count - 1)
-                                _selection = 0;
-                            else
-                                _selection++;
-                            break;
-                        case ConsoleKey.End:
-                            return "-1";
-
-                        default:
-                            break;
-                    }
-                }
             }
         }
 
@@ -184,7 +151,7 @@ namespace Terrible
                         Console.Write(i + " > " + _buttons[i].ToString().PadLeft(_maxNameWidth));
                     }
                 }
-                Console.Write("End - выход");
+                Console.Write("End или Esc - выход\nEnter - Выбор\n← ↑ → ↓ - навигация по меню");
             }
             else
             {
@@ -203,7 +170,7 @@ namespace Terrible
                 }
 
                 Console.WriteLine();
-                Console.WriteLine("End - выход");
+                Console.Write("End или Esc - выход\nEnter - Выбор\n← ↑ → ↓ - навигация по меню");
             }
 
         }

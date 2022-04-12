@@ -1,8 +1,13 @@
-﻿using MyLib;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Terrible;
 
 namespace Homework_2
 {
-    public class Program
+    internal class Program
     {
         static void Main(string[] args)
         {
@@ -22,31 +27,31 @@ namespace Homework_2
                 {
                     case "Case10":
                         Console.Clear();
-                        Tasks.Case10();
+                        Terrible.Tasks.Case10();
                         break;
                     case "Case15":
                         Console.Clear();
-                        Tasks.Case15();
+                        Terrible.Tasks.Case15();
                         break;
                     case "For17":
                         Console.Clear();
-                        Tasks.For17();
+                        Terrible.Tasks.For17();
                         break;
                     case "For38":
                         Console.Clear();
-                        Tasks.For38();
+                        Terrible.Tasks.For38();
                         break;
                     case "While26":
                         Console.Clear();
-                        Tasks.While26();
+                        Terrible.Tasks.While26();
                         break;
                     case "While28":
                         Console.Clear();
-                        Tasks.While28();
+                        Terrible.Tasks.While28();
                         break;
                     case "Minmax25":
                         Console.Clear();
-                        Tasks.Minmax25();
+                        Terrible.Tasks.Minmax25();
                         break;
                 }
             }

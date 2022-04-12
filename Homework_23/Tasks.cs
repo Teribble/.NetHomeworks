@@ -1,7 +1,11 @@
-﻿using MyLib;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 
-namespace Homework_2
+namespace Terrible
 {
     public static class Tasks
     {
@@ -85,7 +89,7 @@ namespace Homework_2
             } while (!(direction == "С" || direction == "З" || direction == "Ю" || direction == "В"));
 
             Console.WriteLine("Выберте действие: (0) — продолжать движение, (1) — поворот налево, (-1) — поворот направо");
-            int action = MyFunction.EnterTheNumber(-1, 1);
+            int action = iHelper.Function.EnterTheNumber(-1, 1);
 
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($"Направление: {Case10_1(direction, action)}");
@@ -163,10 +167,10 @@ namespace Homework_2
             Console.ResetColor();
 
             Console.WriteLine("Введите порядковый номер карты: ");
-            int serialNumber = MyFunction.EnterTheNumber(6, 14);
+            int serialNumber = iHelper.Function.EnterTheNumber(6, 14);
 
             Console.WriteLine("Введите достоинство карты: ");
-            int dignity = MyFunction.EnterTheNumber(1, 4);
+            int dignity = iHelper.Function.EnterTheNumber(1, 4);
 
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine(Case15_01(serialNumber, dignity));
@@ -187,10 +191,10 @@ namespace Homework_2
             Console.ResetColor();
 
             Console.WriteLine("Введите целое число N: ");
-            int N = MyFunction.EnterTheNumber(0, int.MaxValue);
+            int N = iHelper.Function.EnterTheNumber(0, int.MaxValue);
 
             Console.WriteLine("Введите вещественное число А: ");
-            float A = MyFunction.EnterTheNumber(1, float.MaxValue);
+            float A = iHelper.Function.EnterTheNumber(1, float.MaxValue);
 
             float aBuffer = 1, result = 1;
             for (int i = 1; i <= N; i++)
@@ -220,7 +224,7 @@ namespace Homework_2
             Console.ResetColor();
 
             Console.WriteLine("Введите целое число N: ");
-            int N = MyFunction.EnterTheNumber(1,int.MaxValue);
+            int N = iHelper.Function.EnterTheNumber(1,int.MaxValue);
 
             double result = 0D, nI;
 
@@ -255,10 +259,10 @@ namespace Homework_2
             Console.ResetColor();
 
             Console.WriteLine("Введите целое число: ");
-            int N = MyFunction.EnterTheNumber(1, int.MaxValue);
+            int N = iHelper.Function.EnterTheNumber(1, int.MaxValue);
 
             Console.WriteLine("Введите вещественное число N2");
-            float N2 = MyFunction.EnterTheNumber(1f, float.MaxValue);
+            float N2 = iHelper.Function.EnterTheNumber(1f, float.MaxValue);
 
             float N1 = N2, result = N2;
 
@@ -293,10 +297,10 @@ namespace Homework_2
             Console.ResetColor();
 
             Console.WriteLine("Введите вещественное число ε");
-            float X = MyFunction.EnterTheNumber(1, float.MaxValue);
+            float X = iHelper.Function.EnterTheNumber(1, float.MaxValue);
 
             Console.WriteLine("Введите целое число N: ");
-            int N = MyFunction.EnterTheNumber(1, int.MaxValue);
+            int N = iHelper.Function.EnterTheNumber(1, int.MaxValue);
 
             float temp1 = 1, temp2 = 1, result = 1, pow = 1;
 
@@ -330,13 +334,13 @@ namespace Homework_2
             float r1 = 0, r2 = 0, minmul = 0;
 
             Console.WriteLine("Введите целое число N: ");
-            N = MyFunction.EnterTheNumber(1, int.MaxValue);
+            N = iHelper.Function.EnterTheNumber(1, int.MaxValue);
 
             for (i = 1; i <= N; ++i)
             {
                 r2 = r1;
                 Console.WriteLine($"i > {i}");
-                r1 = MyFunction.EnterTheNumber(0f, float.MaxValue);
+                r1 = iHelper.Function.EnterTheNumber(0f, float.MaxValue);
 
                 if ((i == 2) || (r1 * r2 < minmul))
                 {

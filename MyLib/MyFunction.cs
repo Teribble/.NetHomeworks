@@ -1,11 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace iHelper
+namespace MyLib
 {
     /// <summary>
     /// Класс собственных функций
     /// </summary>
-    static class Function
+    public static class MyFunction
     {
         /// <summary>
         /// Функция ввода числа в заданом диапазоне с проверкой введеного значения
@@ -46,13 +50,5 @@ namespace iHelper
 
             return value;
         }
-    }
-
-    /// <summary>
-    /// Дни недели, где 0 - Воскресенье
-    /// </summary>
-    enum DayOfTheWeek
-    {
-        Воскресенье, Понедельник, Вторник, Среда, Четверг, Пятница, Суббота
     }
 }

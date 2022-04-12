@@ -3,7 +3,7 @@ using System.Threading;
 
 namespace itsTime
 {
-    public class iTimer
+    public class Timer
     {
         private const int _Second = 1000;
 
@@ -15,7 +15,7 @@ namespace itsTime
 
         private bool _isStopped;
 
-        public iTimer()
+        public Timer()
         {
             _isStopped = true;
         }

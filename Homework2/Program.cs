@@ -12,7 +12,7 @@ namespace Homework_2
 
             menu.AddButton(buttons);
 
-            string choice = null;
+            string? choice = null;
 
             while (choice != "-1")
             {

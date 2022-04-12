@@ -77,7 +77,7 @@ namespace Homework_2
                               $"Вывести направление робота после выполнения полученной команды.\n");
             Console.ResetColor();
 
-            string direction = null;
+            string? direction = null;
             do
             {
                 Console.WriteLine("Введите начальное направление: «С» — север, «З» — запад, «Ю» — юг, «В» — восток");
@@ -93,6 +93,7 @@ namespace Homework_2
 
             Console.WriteLine("Для продолжения нажмите ENTER");
             Console.ReadLine();
+            Console.Clear();
         }
         /// <summary>
         /// Впомогательная функция для Case15
@@ -145,6 +146,7 @@ namespace Homework_2
                 case 14:
                     return $"Туз-{Case15_02(dignity)}";
             }
+            Console.Clear();
             return "hehe";
         }
         /// <summary>
@@ -174,6 +176,7 @@ namespace Homework_2
 
             Console.WriteLine("Для продолжения нажмите ENTER");
             Console.ReadLine();
+            Console.Clear();
         }
         /// <summary>
         /// Дано вещественное число A и целое число N (> 0). Используя одинцикл,
@@ -205,6 +208,7 @@ namespace Homework_2
 
             Console.WriteLine("Для продолжения нажмите ENTER");
             Console.ReadLine();
+            Console.Clear();
         }
         /// <summary>
         /// Дано целое число N (> 0). Найти сумму 1N + 2N−1 + . . . + N1.
@@ -240,6 +244,7 @@ namespace Homework_2
 
             Console.WriteLine("Для продолжения нажмите ENTER");
             Console.ReadLine();
+            Console.Clear();
         }
         /// <summary>
         /// Дано целое число N (> 1), являющееся числом Фибоначчи: N = F^K
@@ -275,6 +280,7 @@ namespace Homework_2
 
             Console.WriteLine("Для продолжения нажмите ENTER");
             Console.ReadLine();
+            Console.Clear();
         }
         /// <summary>
         ///  Дано вещественное число ε (> 0). Последовательность вещественных чисел A^K определяется следующим образом:
@@ -311,8 +317,9 @@ namespace Homework_2
             Console.WriteLine($"Result: {result}");
             Console.ResetColor();
 
-            Console.ReadLine()
-;        }
+            Console.ReadLine();
+            Console.Clear();
+            ;        }
         /// <summary>
         /// Дано целое число N (> 1) и набор из N чисел. Найти номера
         /// двух соседних чисел из данного набора, произведение которых является
@@ -350,6 +357,7 @@ namespace Homework_2
             Console.ResetColor();
 
             Console.ReadLine();
+            Console.Clear();
         }
     }
 }

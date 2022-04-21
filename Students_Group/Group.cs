@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Students_Group
 {
+#pragma warning disable CS8602 // Разыменование вероятной пустой ссылки.
     /// <summary>
     /// Группа
     /// </summary>
@@ -160,7 +161,9 @@ namespace Students_Group
             {
                 for (int subject = 0; subject < Subjects.Count; subject++)
                 {
+
                     Console.Write(Subjects[subject].Name.PadRight(MaxCharInTheSub));
+
                 }
 
                 Console.WriteLine();
@@ -180,3 +183,4 @@ namespace Students_Group
         }
     }
 }
+#pragma warning restore CS8602 // Разыменование вероятной пустой ссылки.

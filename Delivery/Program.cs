@@ -10,7 +10,7 @@ namespace Delivery
     {
         public static void Main()
         {
-            Console.WriteLine("d");
+
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Delivery.Foods;
+﻿using Delivery.Collectors;
+using Delivery.Foods;
 using Delivery.Rations;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -25,7 +26,7 @@ namespace Delivery.Extensions
                 return obj.ToObject<Vegan>(serializer);
             if (obj["Type"]!.Value<string>() == "4")
                 return obj.ToObject<Premium>(serializer);
-
+            
             return null;
         }
 

@@ -1,0 +1,37 @@
+{
+  "Type": 3,
+  "FoodList": [
+    {
+      "Type": 0,
+      "Name": "Каша пшенная с миндалем",
+      "Calories": 165,
+      "Price": 0
+    },
+    {
+      "Type": 0,
+      "Name": "Крем-суп из красной чечевицы",
+      "Calories": 278,
+      "Price": 0
+    },
+    {
+      "Type": 0,
+      "Name": "Желе манго-чиа",
+      "Calories": 137,
+      "Price": 0
+    },
+    {
+      "Type": 0,
+      "Name": "Львовские гречаники",
+      "Calories": 392,
+      "Price": 0
+    },
+    {
+      "Type": 1,
+      "Name": "Манговый ласси",
+      "Calories": 302,
+      "Price": 0
+    }
+  ],
+  "Calories": 1274,
+  "Price": 1700
+}

@@ -1,0 +1,37 @@
+{
+  "Type": 1,
+  "FoodList": [
+    {
+      "Type": 0,
+      "Name": "Омлет с шампиньонами",
+      "Calories": 301.9,
+      "Price": 0
+    },
+    {
+      "Type": 0,
+      "Name": "Минестроне",
+      "Calories": 412.8,
+      "Price": 0
+    },
+    {
+      "Type": 0,
+      "Name": "Салат из запеченных моркови и свеклы с сыром",
+      "Calories": 435.1,
+      "Price": 0
+    },
+    {
+      "Type": 0,
+      "Name": "Чахохбили с отварным картофелем",
+      "Calories": 441.8,
+      "Price": 0
+    },
+    {
+      "Type": 1,
+      "Name": "Coca - Cola",
+      "Calories": 380,
+      "Price": 0
+    }
+  ],
+  "Calories": 1591.6,
+  "Price": 780
+}

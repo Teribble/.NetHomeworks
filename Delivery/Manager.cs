@@ -7,23 +7,23 @@ namespace Delivery
     public class Manager
     {
         private CollectorBuilder? _collector;
-        private Order? order { get; set; }
+        private Order? Order { get; set; }
         public List<Check>? CheckList { get; private set; }
         public void CollectOrder(Order order)
         {
             AnsiConsole.Status().Start("[green]Сбор заказа...[/]", ctx =>
                 {
-                    Thread.Sleep(1000);
+                    Thread.Sleep(300);
 
                     AnsiConsole.MarkupLine("Ожидайте, Ваш заказ на сборке...");
-                    Thread.Sleep(1000);
+                    Thread.Sleep(300);
 
                     ctx.SpinnerStyle(Style.Parse("red"));
 
                     AnsiConsole.MarkupLine("Практически все собрано..");
-                    Thread.Sleep(1000);
+                    Thread.Sleep(300);
                 });
-            this.order = order;
+            Order = order;
             switch (order.Type)
             {
                 case RationType.Balance:
@@ -62,7 +62,7 @@ namespace Delivery
 
         private void RegisterCheck()
         {
-            Check buffer = new Check(GetRation(), order!);
+            Check buffer = new Check(GetRation(), Order!);
             if (CheckList == null!)
             {
                 CheckList = new List<Check>();

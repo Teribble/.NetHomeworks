@@ -6,7 +6,5 @@ namespace Delivery
     {
         public Rations.RationType Type { get; set; }
         public int CountDay { get; set; }
-
-
     }
 }

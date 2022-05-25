@@ -20,12 +20,12 @@ namespace Delivery
 
             CountDay = order.CountDay;
 
-            if (CountDay > 10)
+            if (CountDay <= 10)
                 _discount = 5;
-            else if (CountDay > 20)
+            else if (CountDay > 10 && CountDay <=20)
                 _discount = 7;
-            else if (CountDay > 30)
-                _discount = 10;
+            else if (CountDay > 20 && CountDay <= 30)
+                _discount = 9;
             else _discount = 0;
 
             Calories = ration.Calories;

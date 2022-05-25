@@ -24,7 +24,7 @@ namespace Delivery
                 _discount = 5;
             else if (CountDay > 10 && CountDay <=20)
                 _discount = 7;
-            else if (CountDay > 20 && CountDay <= 30)
+            else if (CountDay > 20 && CountDay <= 30 || CountDay > 30)
                 _discount = 9;
             else _discount = 0;
 
@@ -43,17 +43,28 @@ namespace Delivery
         public void Print()
         {
             var table = new Table();
+            table.Border = TableBorder.HeavyHead;
 
-            table.AddColumn("Your price");
-            table.AddRow(new Panel
-                (
-                "Type: " + Type
-                + "\nDiscount percent: " + _discount
-                + "\nCalories: " + Calories
-                + "\nDiscount: " + PriceDiscount
-                + "\nPrice: " + Price
+            var panel = new Panel
+                ("_________________________"
+                + "\nType: " + Type
+                + "\nDiscount percent: " + _discount + "%"
+                + "\nCalories: " + Calories + " калл"
+                + "\nDiscount: " + PriceDiscount + "р"
+                + "\nPrice: " + Price + "р"
                 + "\nDate: " + Date
-                ));
+                + "\nDay delivery: " + CountDay + "d"
+                + "\n_________________________"
+                );
+            panel.Border = BoxBorder.Heavy;
+
+            table.AddColumn("Delivery by Teribble");
+            table.AddRow(panel);
+            table.AddRow(new Panel
+                ( "Total price: " + Price * CountDay
+                + "\nPrice without VAT: " + Price * CountDay
+                + "\n_________________________"
+                )) ;
             
 
             AnsiConsole.Write(table);

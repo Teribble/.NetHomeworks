@@ -13,8 +13,6 @@ namespace Delivery.Rations
         {
             Type = RationType.Balance;
             FoodList = new List<IFood>();
-            Calories = FoodList.Sum(food => food.Calories);
-            Price = FoodList.Sum(food => food.Price);
         }
         public override string ToString()
         {

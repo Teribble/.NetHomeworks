@@ -10,35 +10,24 @@ namespace Delivery
     {
         public static void Main()
         {
-            //IRation rat = new Balance();
-            //rat.FoodList!.Add(new Dish("Meat", 123, 123));
-            //rat.FoodList.Add(new Drink("Cola", 444, 444));
-            //rat.FoodList.Add(new Drink("Cola", 444, 444));
-            //rat.FoodList.Add(new Drink("Cola", 444, 444));
-            //
-            //string json1 = JsonConvert.SerializeObject(rat, Formatting.Indented);
-            //string path = "Rations/JSON/Vegan.json";
-            //File.WriteAllText(path, json1);
+            Order order = new Order { Type = RationType.Default, CountDay = 11};
+            Order order1 = new Order { Type = RationType.Sport, CountDay = 21 };
+            Order order2 = new Order { Type = RationType.Vegan, CountDay = 31 };
+            Order order3 = new Order { Type = RationType.Premium, CountDay = 10 };
+            
+            Manager manager = new Manager();
+            manager.CollectOrder(order);
+            manager.CollectOrder(order1);
+            manager.CollectOrder(order2);
+            manager.CollectOrder(order3);
 
-            //string json = File.ReadAllText(path);
-            //
-            //JsonConverter[] converters = { new FoodConvert(), new RationConvert() };
-            //var test = JsonConvert.DeserializeObject<IRation>(json, new JsonSerializerSettings() { Converters = converters });
-            //
-            //Console.WriteLine("Type ration: " + test!.Type);
-
-            CollectorBuilder b = new VeganCollector();
-
-            b.CollectRation();
-            var test = b.GetRation();
-
-            Console.WriteLine("Type collector: " + test.Type);
-            foreach (var food in test!.FoodList!)
+            foreach (var check in manager.CheckList!)
             {
-                Console.WriteLine(food);
+                Thread.Sleep(1000);
+                check.Print();
             }
-            Console.WriteLine(String.Format("Калории: {0:00.0} калл", test.Calories));
-            Console.WriteLine(String.Format("Цена рациона: {0:00.0} руб", test.Price));
+
+
         }
     }
 }

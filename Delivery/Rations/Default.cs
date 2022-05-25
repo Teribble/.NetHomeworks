@@ -13,8 +13,16 @@ namespace Delivery.Rations
         {
             Type = RationType.Default;
             FoodList = new List<IFood>();
-            Calories = FoodList.Sum(food => food.Calories);
-            Price = FoodList.Sum(food => food.Price);
+        }
+
+        public override string ToString()
+        {
+            string type = "Type: " + Type;
+            string foodlist = FoodList!.ToArray().ToString()!;
+            string price = string.Format("\nPrice: {00:0.00}р", Price);
+            string calories = string.Format("\nCalories: {00:0.00} калл", Calories);
+
+            return type + foodlist + price + calories;
         }
     }
 }

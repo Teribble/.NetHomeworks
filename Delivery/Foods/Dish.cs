@@ -32,11 +32,10 @@ namespace Delivery.Foods
 
         public override string ToString()
         {
-            string price = string.Format("\nPrice: {00:0.00}р", Price);
             string calories = string.Format("\nCalories: {00:0.0} калл", Calories);
             string name = string.Format("\nНаименование: {0}", Name);
             string type = string.Format("Тип продукта: {0}", Type);
-            return type + name + calories + price;
+            return type + name + calories;
         }
     }
 }

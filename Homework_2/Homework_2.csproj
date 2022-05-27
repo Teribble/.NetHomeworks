@@ -22,8 +22,5 @@
       <Name>MyLib</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Program.cs" />
-    <Compile Include="Tasks.cs" />
-  </ItemGroup>
+
 </Project>

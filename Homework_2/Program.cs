@@ -16,6 +16,7 @@ namespace Homework_2
 
             while (choice != "-1")
             {
+                Console.Clear();
                 choice = menu.Update();
 
                 switch (choice)

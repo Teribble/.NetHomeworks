@@ -4,6 +4,7 @@ using Delivery.Extensions;
 using Newtonsoft.Json;
 using Delivery.Collectors;
 using Spectre.Console;
+using Terminal.Gui;
 
 namespace Delivery
 {
@@ -28,16 +29,27 @@ namespace Delivery
             //    check.Print();
             //}
 
-            var image = new CanvasImage("../../../PNG/png.jpg");
+            //var image = new CanvasImage("../../../PNG/png.jpg");
 
             // Set the max width of the image.
             // If no max width is set, the image will take
             // up as much space as there is available.
-            image.MaxWidth(128);
+            //image.MaxWidth(128);
 
             // Render the image to the console
-            Console.ReadLine();
-            AnsiConsole.Write(image);
+            //Console.ReadLine();
+            //AnsiConsole.Write(image);
+
+            var label = new Label("Hello")
+            {
+                X = 1,
+                Y = Pos.Center(),
+                Width = Dim.Fill(),
+                Height = 1
+            };
+
+            // Absolute position using the provided rectangle
+            var label2 = new Label(new Rect(1, 2, 20, 1), "World");
         }
     }
 }

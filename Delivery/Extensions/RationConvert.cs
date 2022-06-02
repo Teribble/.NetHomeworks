@@ -6,6 +6,9 @@ using Newtonsoft.Json.Linq;
 
 namespace Delivery.Extensions
 {
+    /// <summary>
+    /// Класс расширение для класса JsonConverter, сделан для правильной серилизации и десирилизации интерфейса iRation
+    /// </summary>
     public class RationConvert : JsonConverter
     {
         public override bool CanConvert(Type objectType)

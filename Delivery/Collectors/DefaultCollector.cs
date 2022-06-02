@@ -1,5 +1,8 @@
 ﻿namespace Delivery.Collectors
 {
+    /// <summary>
+    /// Сборщик обычного рациона
+    /// </summary>
     public class DefaultCollector : CollectorBuilder
     {
         protected override string Path { get; set; }

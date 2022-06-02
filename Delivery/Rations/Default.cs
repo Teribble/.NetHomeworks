@@ -2,11 +2,26 @@
 
 namespace Delivery.Rations
 {
+    /// <summary>
+    /// Обычный рацион
+    /// </summary>
     public class Default : IRation
     {
+        /// <summary>
+        /// Тип рациона
+        /// </summary>
         public RationType Type { get; }
+        /// <summary>
+        /// Список продуктов
+        /// </summary>
         public List<IFood>? FoodList { get; set; }
+        /// <summary>
+        /// Калории
+        /// </summary>
         public float Calories { get; set; }
+        /// <summary>
+        /// Цена
+        /// </summary>
         public decimal Price { get; set; }
 
         public Default()

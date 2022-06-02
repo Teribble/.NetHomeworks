@@ -6,13 +6,34 @@ using System.Threading.Tasks;
 
 namespace Delivery.Foods
 {
+    /// <summary>
+    /// Блюдо
+    /// </summary>
     public class Dish : IFood
     {
+        /// <summary>
+        /// Тип еды
+        /// </summary>
         public FoodType Type { get; }
+        /// <summary>
+        /// Наименование еды
+        /// </summary>
         public string? Name { get; set; }
+        /// <summary>
+        /// Калории
+        /// </summary>
         public float Calories { get; set; }
+        /// <summary>
+        /// Цена
+        /// </summary>
         public decimal Price { get; set; }
-
+        /// <summary>
+        /// Блюдо
+        /// </summary>
+        /// <param name="name">Наименование блюда</param>
+        /// <param name="calories">Кол-во калорий в блюде</param>
+        /// <param name="price">Цена блюда</param>
+        /// <exception cref="ArgumentException"></exception>
         public Dish(string name, float calories, decimal price)
         {
             Type = FoodType.Dish;

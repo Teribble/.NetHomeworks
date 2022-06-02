@@ -3,17 +3,48 @@ using Spectre.Console;
 
 namespace Delivery
 {
+    /// <summary>
+    /// Чек
+    /// </summary>
     public class Check
     {
+        /// <summary>
+        /// Скидка
+        /// </summary>
         private int _discount;
+        /// <summary>
+        /// Тип рациона
+        /// </summary>
         public RationType Type { get; }
+        /// <summary>
+        /// Количество дней доставки
+        /// </summary>
         public int CountDay { get; }
+        /// <summary>
+        /// Калории
+        /// </summary>
         public float Calories { get; }
+        /// <summary>
+        /// Цена
+        /// </summary>
         public decimal Price { get; }
+        /// <summary>
+        /// Дата печати чека
+        /// </summary>
         public DateTime Date { get; }
+        /// <summary>
+        /// Скидка
+        /// </summary>
         public int Discount { get; set; }
+        /// <summary>
+        /// Скидка в рублях
+        /// </summary>
         public decimal PriceDiscount { get; }
-
+        /// <summary>
+        /// Чек
+        /// </summary>
+        /// <param name="ration">Тип рациона</param>
+        /// <param name="order">заказ</param>
         public Check(IRation ration, Order order)
         {
             Type = order.Type;
@@ -39,7 +70,9 @@ namespace Delivery
 
             Date = DateTime.Now;
         }
-
+        /// <summary>
+        /// Печать чека
+        /// </summary>
         public void Print()
         {
             var table = new Table();

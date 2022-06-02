@@ -4,7 +4,6 @@ using Delivery.Extensions;
 using Newtonsoft.Json;
 using Delivery.Collectors;
 using Spectre.Console;
-using Terminal.Gui;
 
 namespace Delivery
 {
@@ -12,6 +11,9 @@ namespace Delivery
     {
         public static void Main()
         {
+
+
+
             //Order order = new Order { Type = RationType.Default, CountDay = 11};
             //Order order1 = new Order { Type = RationType.Sport, CountDay = 20 };
             //Order order2 = new Order { Type = RationType.Vegan, CountDay = 31 };
@@ -29,27 +31,19 @@ namespace Delivery
             //    check.Print();
             //}
 
-            //var image = new CanvasImage("../../../PNG/png.jpg");
 
-            // Set the max width of the image.
-            // If no max width is set, the image will take
-            // up as much space as there is available.
-            //image.MaxWidth(128);
+            Client lara = new Client("Lara Kroft");
 
-            // Render the image to the console
-            //Console.ReadLine();
-            //AnsiConsole.Write(image);
+            Order order = lara.MakeOrder();
 
-            var label = new Label("Hello")
+            Manager manager = new Manager();
+
+            manager.CollectOrder(order);
+
+            foreach (var item in manager.CheckList!)
             {
-                X = 1,
-                Y = Pos.Center(),
-                Width = Dim.Fill(),
-                Height = 1
-            };
-
-            // Absolute position using the provided rectangle
-            var label2 = new Label(new Rect(1, 2, 20, 1), "World");
+                item.Print();
+            }
         }
     }
 }

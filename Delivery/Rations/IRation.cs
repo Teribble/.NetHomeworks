@@ -2,6 +2,9 @@
 
 namespace Delivery.Rations
 {
+    /// <summary>
+    /// Интерфейс для рационов
+    /// </summary>
     public interface IRation
     {
         public RationType Type { get; }

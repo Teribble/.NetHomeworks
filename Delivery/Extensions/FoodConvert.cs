@@ -5,6 +5,9 @@ using Newtonsoft.Json.Linq;
 
 namespace Delivery.Extensions
 {
+    /// <summary>
+    /// Класс расширение для класса JsonConverter, сделан для правильной серилизации и десирилизации интерфейса iFood
+    /// </summary>
     public class FoodConvert : JsonConverter
     {
         public override bool CanConvert(Type objectType)

@@ -4,11 +4,25 @@ using Spectre.Console;
 
 namespace Delivery
 {
+    /// <summary>
+    /// Менеджер
+    /// </summary>
     public class Manager
     {
-        private CollectorBuilder? _collector;
+        private CollectorBuilder? _collector; // Паттерн билдера, тут менеджер в виде директора
+        /// <summary>
+        /// Заказ
+        /// </summary>
         private Order? Order { get; set; }
+        /// <summary>
+        /// Список зарегестрированный чеков
+        /// </summary>
         public List<Check>? CheckList { get; private set; }
+        /// <summary>
+        /// Собрать заказ
+        /// </summary>
+        /// <param name="order">Заказ</param>
+        /// В метод закидываем заказ, по типу заказа он определяет, какого именно сборщика задейстовать для сборки заказа
         public void CollectOrder(Order order)
         {
             AnsiConsole.Status().Start("[green]Сбор заказа...[/]", ctx =>
@@ -54,12 +68,17 @@ namespace Delivery
             }
             AnsiConsole.Write(new Markup("[green]Заказ[/] [green]собран[/]\n"));
         }
-
+        /// <summary>
+        /// Выдать рацион
+        /// </summary>
+        /// <returns>Возращает рацион</returns>
         public IRation GetRation()
         {
             return _collector?.GetRation()!;
         }
-
+        /// <summary>
+        /// Зарегестрировать чек
+        /// </summary>
         private void RegisterCheck()
         {
             Check buffer = new Check(GetRation(), Order!);
